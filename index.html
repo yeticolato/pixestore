@@ -31,12 +31,19 @@
     </style>
 </head>
 <body>
-    <button onclick="toggleBackground()">Cambia Sfondo</button>
+    <button id="toggleButton">Cambia Sfondo</button>
 
     <script>
-        function toggleBackground() {
-            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? 'black' : 'white';
-        }
+        let isWhite = true;
+
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            if (isWhite) {
+                document.body.style.backgroundColor = 'black';
+            } else {
+                document.body.style.backgroundColor = 'white';
+            }
+            isWhite = !isWhite;
+        });
     </script>
 </body>
 </html>
