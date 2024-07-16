@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pulsante Cambia Colore</title>
-  <style>
-.button {
-  background-color: white; /* Colore iniziale bianco */
-  color: black;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia Sfondo</title>
+    <style>
+        body {
+            background-color: white;
+            transition: background-color 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-.button:hover { /* Effetto hover (opzionale) */
-  background-color: #ccc;
-}
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
 
-.button.active { /* Classe "active" per il pulsante cliccato */
-  background-color: black;
-  color: white;
-}
-
-  </style>
+        button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
-  <button class="button">Clicca per cambiare colore</button>
+    <button onclick="toggleBackground()">Cambia Sfondo</button>
 
-  <script>
-    const button = document.querySelector('.button');
-
-    button.addEventListener('click', () => {
-      button.classList.toggle('active'); // Attiva/disattiva la classe "active"
-    });
-  </script>
+    <script>
+        function toggleBackground() {
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? 'black' : 'white';
+        }
+    </script>
 </body>
 </html>
