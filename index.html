@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulsante Cambia Colore</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .button {
+      background-color: white; /* Colore iniziale bianco */
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover { /* Effetto hover (opzionale) */
+      background-color: #ccc;
+    }
+
+    .button.active { /* Classe "active" per il pulsante cliccato */
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button class="button">Clicca per cambiare colore</button>
+
+  <script>
+    const button = document.querySelector('.button');
+
+    button.addEventListener('click', () => {
+      button.classList.toggle('active'); // Attiva/disattiva la classe "active"
+    });
+  </script>
+</body>
+</html>
